@@ -3,6 +3,7 @@ const numberButton = document.querySelectorAll('.button__num--js');
 const operantionButton = document.querySelectorAll('.button__op--js');
 const resultButton = document.querySelector('.button__sum--js');
 const clearButton = document.querySelector('.button__clr--js');
+
 let previousNumber = 0;
 let currentNumber = 0;
 let operationType = null;
@@ -39,6 +40,7 @@ function result() {
 
 
 clearButton.addEventListener('click', clear);
+
 
 numberButton.forEach(button => {
     button.addEventListener('click', () => {
