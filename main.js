@@ -1,4 +1,4 @@
-const display = document.querySelector('.display');
+const displayText = document.querySelector('.display');
 const numberButton = document.querySelectorAll('.button__num--js');
 const operantionButton = document.querySelectorAll('.button__op--js');
 const resultButton = document.querySelector('.button__sum--js');
@@ -10,7 +10,7 @@ let operationType = null;
 
 
 function clear() {
-    display.innerHTML = '0';
+    display('0');
     console.log('clear');
     previousNumber = 0;
     currentNumber = 0;
@@ -35,9 +35,13 @@ function result() {
             break;
     }
     console.log(`result: ${currentNumber}`);
-    display.innerHTML = currentNumber;
+    display(currentNumber);
 }
 
+function display(number) {
+
+    displayText.innerHTML = number;
+}
 
 clearButton.addEventListener('click', clear);
 
@@ -47,7 +51,7 @@ numberButton.forEach(button => {
         if (currentNumber == 0) currentNumber = button.value;
         else currentNumber += button.value;
         console.log(`button: ${button.value}`);
-        display.innerHTML = currentNumber;
+        display(currentNumber);
         console.log(`value: ${currentNumber}`);
 
     })
