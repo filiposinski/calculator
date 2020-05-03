@@ -1,61 +1,66 @@
-const textElement = document.querySelector('.display');
+const display = document.querySelector('.display');
 const numberButton = document.querySelectorAll('.button__num--js');
-const operantButton = document.querySelectorAll('.button__op--js');
-const sumButton = document.querySelector('.button__sum--js');
-const clrButton = document.querySelector('.button__clr--js');
+const operantionButton = document.querySelectorAll('.button__op--js');
+const resultButton = document.querySelector('.button__sum--js');
+const clearButton = document.querySelector('.button__clr--js');
 let previousNumber = 0;
 let currentNumber = 0;
-let operationType;
+let operationType = null;
 
 
 function clear() {
-    textElement.innerHTML = '0';
+    display.innerHTML = '0';
     console.log('clear');
+    previousNumber = 0;
+    currentNumber = 0;
+    operationType = null;
 }
 
-
-function operation(operantButton) {
-
-}
-
-function sum() {
-    let compute;
-    currentNumber = parseFloat(textElement.innerHTML);
+function result() {
+    prev = parseFloat(previousNumber);
+    current = parseFloat(currentNumber);
     switch (operationType) {
         case '+':
-            compute = previousNumber + currentNumber;
+            currentNumber = prev + current;
             break;
-        case '−':
-            compute = previousNumber - currentNumber;
+        case '-':
+            currentNumber = prev - current;
             break;
-        case '×':
-            compute = previousNumber * currentNumber;
+        case '*':
+            currentNumber = prev * current;
             break;
-        case '÷':
-            compute = previousNumber / currentNumber;
+        case '/':
+            currentNumber = prev / current;
             break;
     }
-    textElement.innerHTML = compute;
+    console.log(`result: ${currentNumber}`);
+    display.innerHTML = currentNumber;
 }
 
-clrButton.addEventListener('click', clear);
+
+clearButton.addEventListener('click', clear);
 
 numberButton.forEach(button => {
     button.addEventListener('click', () => {
-        if (textElement.innerHTML == '0') textElement.innerHTML = '';
-        textElement.innerHTML += button.innerHTML;
-        console.log(`value: ${button.innerHTML}`);
+        if (currentNumber == 0) currentNumber = button.value;
+        else currentNumber += button.value;
+        console.log(`button: ${button.value}`);
+        display.innerHTML = currentNumber;
+        console.log(`value: ${currentNumber}`);
+
     })
 })
 
-operantButton.forEach(button => {
+operantionButton.forEach(button => {
     button.addEventListener('click', () => {
-        operationType = button.innerHTML;
+
+        previousNumber = currentNumber;
+        currentNumber = 0;
+        console.log(`previous: ${previousNumber}`);
+        operationType = button.value;
         console.log(`operation: ${operationType}`);
-        previousNumber = parseFloat(textElement.innerHTML);
-        console.log(`previous: ${previousNumber}`)
-        clear();
+
     })
 })
 
-sumButton.addEventListener('click', sum);
+resultButton.addEventListener('click', result);
