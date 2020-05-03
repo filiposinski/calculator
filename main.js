@@ -25,7 +25,7 @@ function sum() {
         case '+':
             compute = previousNumber + currentNumber;
             break;
-        case '-':
+        case '−':
             compute = previousNumber - currentNumber;
             break;
         case '×':
