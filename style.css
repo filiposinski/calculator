@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400&display=swap&subset=latin-ext");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 body {
     background: rgb(34, 193, 195);
     background: linear-gradient(344deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
@@ -33,7 +34,7 @@ body {
 
 .display {
     grid-column: span 4;
-    background: lightgrey;
+    background: rgb(182, 182, 109);
     text-align: right;
     border: none;
     box-shadow: none;
@@ -42,6 +43,7 @@ body {
     color: rgb(17, 17, 17);
     font-size: 2em;
     margin: 0 0 10px 0;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .button {
