@@ -4,6 +4,7 @@
 
 Simple calculator made in vanilla js to train the skills! 💪
 
-## Where to check?
+## How to check?
 
 Just simply click [here](https://spacehiker.github.io/calculator/) 😉
+
