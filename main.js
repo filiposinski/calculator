@@ -8,6 +8,10 @@ let previousNumber = 0;
 let currentNumber = 0;
 let operationType = null;
 
+function Round(n, k) {
+    let factor = Math.pow(10, k);
+    return Math.round(n * factor) / factor;
+}
 
 function clear() {
     display('0');
@@ -20,27 +24,30 @@ function clear() {
 function result() {
     prev = parseFloat(previousNumber);
     current = parseFloat(currentNumber);
-    switch (operationType) {
-        case '+':
-            currentNumber = prev + current;
-            break;
-        case '-':
-            currentNumber = prev - current;
-            break;
-        case '*':
-            currentNumber = prev * current;
-            break;
-        case '/':
-            currentNumber = prev / current;
-            break;
+    if (prev != 0) {
+        switch (operationType) {
+            case '+':
+                currentNumber = prev + current;
+                break;
+            case '-':
+                currentNumber = prev - current;
+                break;
+            case '*':
+                currentNumber = prev * current;
+                break;
+            case '/':
+                currentNumber = prev / current;
+                break;
+            default:
+                break;
+        };
+        console.log(`result: ${currentNumber}`);
+        display(Round(currentNumber, 8));
     }
-    console.log(`result: ${currentNumber}`);
-    display(currentNumber);
 }
 
 function display(number) {
-
-    displayText.innerHTML = number;
+    displayText.value = number;
 }
 
 clearButton.addEventListener('click', clear);
