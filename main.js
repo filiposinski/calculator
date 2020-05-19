@@ -53,6 +53,33 @@ function display(number) {
 clearButton.addEventListener('click', clear);
 
 
+/*
+zmienna.forEach(funkcja);
+
+funkcja wywola sie dla wszystkich elementow w tablicy;
+
+funkcja(argument) {
+    argument.cos tam
+}
+*/
+
+/*
+numberButton.forEach(liczby);
+
+function liczby(button) {
+    button.addEventListener('click', dodawanie(button));
+};
+
+function dodawanie(button) {
+    if (currentNumber == 0) currentNumber = button.value;
+    else currentNumber += button.value;
+    console.log(`button: ${button.value}`);
+    display(currentNumber);
+    console.log(`value: ${currentNumber}`);
+}
+
+*/
+
 numberButton.forEach(button => {
     button.addEventListener('click', () => {
         if (currentNumber == 0) currentNumber = button.value;
@@ -63,6 +90,8 @@ numberButton.forEach(button => {
 
     })
 })
+
+
 
 operantionButton.forEach(button => {
     button.addEventListener('click', () => {

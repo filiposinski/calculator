@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 html {
     box-sizing: border-box;
+    touch-action: manipulation;
 }
 
 *,
@@ -110,4 +111,42 @@ button:hover {
     color: white;
     font-size: 5em;
     margin: 0 0 50px 0;
+}
+
+.phone {
+    display: none;
+}
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        padding: 20px;
+        background: rgb(17, 17, 17);
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: auto;
+    }
+    .title {
+        display: none;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .main {
+        display: none;
+    }
+    body {
+        background: gray;
+    }
+    .phone {
+        display: block;
+        color: white;
+        font-size: 40px;
+        font-family: Roboto;
+    }
 }
