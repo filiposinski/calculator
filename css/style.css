@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400&display=swap&subset=latin-ext");
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 html {
     box-sizing: border-box;
     touch-action: manipulation;
@@ -13,7 +13,7 @@ html {
 
 body {
     background: rgb(34, 193, 195);
-    background: linear-gradient(344deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+    background: linear-gradient( 344deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
     margin: 0 auto;
     min-height: 100vh;
     align-items: center;
@@ -72,7 +72,7 @@ body {
     color: rgb(17, 17, 17);
     font-size: 2em;
     margin: 10px 0;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Orbitron", sans-serif;
     max-width: -moz-available;
 }
 
@@ -117,7 +117,7 @@ button:hover {
     display: none;
 }
 
-@media screen and (max-width: 450px) and (orientation: portrait) {
+@media only screen and (max-device-width: 450px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 3) {
     .grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -136,7 +136,7 @@ button:hover {
     }
 }
 
-@media screen and (orientation: landscape) {
+@media only screen and (max-device-height: 400px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 3) {
     .main {
         display: none;
     }
