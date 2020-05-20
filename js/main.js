@@ -7,11 +7,12 @@ window.onload = () => {
     }
 }
 
-const displayText = document.querySelector(".display");
-const numberButton = document.querySelectorAll(".button__num--js");
-const operantionButton = document.querySelectorAll(".button__op--js");
-const resultButton = document.querySelector(".button__sum--js");
-const clearButton = document.querySelector(".button__clr--js");
+
+const displayText = document.querySelector('display');
+const numberButton = document.querySelectorAll('button__num--js');
+const operantionButton = document.querySelectorAll('button__op--js');
+const resultButton = document.querySelector('button__sum--js');
+const clearButton = document.querySelector('button__clr--js');
 
 let previousNumber = 0;
 let currentNumber = 0;
